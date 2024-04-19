@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- iconscout cdn path -->
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+   <!-- CSS File Link -->
+   <link rel="stylesheet" href="/assets/style1.css">
+</head>
+<body>
+   <div class="sidebar" id="sidebar">
+      <div class="logo">
+         <h3 >
+            <i class="uil uil-hospital"></i>
+            Clinique NAR
+         </h3>
+      </div>
+
+      <div class="sidebar-menu">
+         <ul>
+            <li routerLink="/homeMedecin">
+               <i class="uil uil-dashboard"></i>
+               <span>&nbsp;Tableau de bord</span>
+            </li>
+            <li routerLink="/viewRendez">
+                 <i class="uil-clipboard-notes"></i>
+                <span>&nbsp;Rendez Vous</span>
+            </li>
+            <li routerLink="/viewMedecin">
+                <i class="icofont-doctor"></i>
+                <span>&nbsp;Médecins</span>
+            </li>
+            <li routerLink="/view-patient">
+                <i class="uil uil-accessible-icon-alt"></i>
+               <span>&nbsp;Patients</span>
+            </li>
+           
+            <li routerLink="/viewDossier">
+                  <i class="uil-clipboard-notes"></i>
+               <span>&nbsp;Dossier Medicale</span>
+            </li>
+            <li routerLink="/view-plage">
+                  <i class="uil uil-calendar-alt"></i>
+               <span>&nbsp;Plage Horraire</span>
+            </li>
+            <li routerLink="/medecinProfile">
+               <i class="icofont-user-suited"></i>
+            <span>&nbsp;Mon profil</span>
+         </li>
+            <li (click)="logout()">
+               <i class="uil uil-signin"></i>
+               <span>&nbsp;Déconnexion</span>
+            </li>
+         </ul>
+      </div>
+   </div>
+
+   <div class="main-content" id="main-content">
+      <header class="flex">
+         <h2>
+            <i class="uil uil-bars" id="menu-icon"></i>
+            Tableau de bord
+         </h2>
+         <div class="admin-box flex" >
+            <img src={{imagePath}} width="30px" height="30px">
+            <div>
+               <h2>{{nomPrenomAdmin}}</h2>
+               <small style="margin-left: 60px;"> Specialité : {{ medecin.specialite.nom}}</small>
+            </div>
+         </div>
+      </header>
+
+      <main>
+         <div class="cards">
+            <div class="single-card">
+               <div>
+                  <span>Rendez-vous</span>
+                  <h2>650</h2>
+               </div>
+               <i class="uil uil-calendar-alt"></i>
+            </div>
+            <div class="single-card">
+               <div>
+                  <span>Opérations</span>
+                  <h2>54</h2>
+               </div>
+               <i class="icofont-ui-cut"></i>
+            </div>
+            <div class="single-card">
+               <div>
+                  <span>Nouveaux patients</span>
+                  <h2>{{patientToDaycount}}</h2>
+               </div>
+               <i class="uil uil-user-plus"></i>
+            </div>
+            <div class="single-card">
+               <div>
+                  <span>Revenus</span>
+                  <h2>20,125 DT</h2>
+               </div>
+               <i class="icofont-money"></i>
+            </div>
+         </div>
+
+
+         <div class="wrapper flex">
+            <div class="projects">
+               <div class="card-header flex">
+                  <h3>Rendez-vous réservé</h3>
+                  <button routerLink="/rendezVous">voir tout <i class="uil uil-angle-right"></i></button>
+               </div>
+
+               <table>
+   <thead>
+      <th>
+         <tr>
+            <th style="width: 215;">Patient</th>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Médecin</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Date</td>
+         </tr>
+      </th>
+   </thead>
+
+                  <tbody>
+
+                  </tbody>
+               </table>
+            </div>
+        <div class="customers">
+               <div class="card-header flex">
+                  <h3>Operations</h3>
+                  <button routerLink="/rendezVous">voir tout <i class="uil uil-angle-right"></i></button>
+               </div>
+
+               <table>
+   <thead>
+      <th>
+         <tr>
+            <th style="width: 215;">Date</th>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>Heure</td>
+         </tr>
+      </th>
+   </thead>
+
+                  <tbody>
+
+                  </tbody>
+               </table>
+            </div>
+         </div>
+        <!-- tableau d'operations -->
+    
+      </main>
+   </div>
+
+
+</body>
+</html>
